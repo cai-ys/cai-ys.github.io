@@ -1,0 +1,32 @@
+指令：
+1
+ v-on 事件绑定   v-model 双向绑定 		v-for   循环
+v-text innerText输出     v-html innerHTMl输出    v-pre  跳出
+v-once  渲染一次    v-show  显示隐藏   v-if  v-else   v-else-if 判断条件
+v-bind  属性绑定   v-cloak 刷新页面
+2
+v-on 事件绑定   v-model 双向绑定    	 v-for   循环
+v-text innerText输出     v-html innerHTMl输出    v-pre  跳出
+v-once  渲染一次    v-show  显示隐藏   v-if  v-else   v-else-if 判断条件
+v-bind  属性绑定   v-cloak 刷新页面
+3
+v-on 事件绑定    v-model 双向绑定    	 v-for   循环
+v-text innerText输出     v-html innerHTMl输出    v-pre  跳出
+v-once  渲染一次    v-show  显示隐藏   v-if  v-else   v-else-if 判断条件
+v-bind  属性绑定   v-cloak 刷新页面
+4
+v-on事件绑定   v-model 双向绑定    	 v-for   循环
+v-text innerText输出     v-html innerHTMl输出    v-pre  跳出
+v-once  渲染一次    v-show  显示隐藏   v-if  v-else   v-else-if 判断条件
+v-bind  属性绑定   v-cloak 刷新页面
+5
+v-on 事件绑定   v-model 双向绑定    	 v-for   循环
+v-text innerText输出     v-html innerHTMl输出    v-pre  跳出
+v-once  渲染一次    v-show  显示隐藏   v-if  v-else   v-else-if 判断条件
+v-bind  属性绑定   v-cloak 刷新页面
+生命周期函数
+1
+创建前  beforCreate 创建后	created 
+渲染前	beforeMount 渲染后  mounted
+更新前	beforeUpdate 更新后 updated
+销毁前	beforeDestroy 销毁后    destroyed
