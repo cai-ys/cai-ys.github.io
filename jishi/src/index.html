@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+    <script src="vue-resource.js"></script>
+    <link rel="stylesheet" href="1.css" />
+    <title>起飞页模板</title>
+</head>
+
+<body>
+    <div id="box">
+        <div id="wrap">
+            <hd></hd>
+            <two :nav="arr"></two>
+            <three></three>
+            <four></four>
+            <five :tw="brr"></five>
+            <six :th="crr"></six>
+        </div>
+    </div>
+    <template id="hd">
+      <div>
+        <div class="hd-bg">
+          <div class="hd-item">
+            <h4>起飞页自助建站平台</h4>
+            <div class="hd-ban">
+              <ul>
+                <li>与创业为伴,点亮创新,<span>是云建站的使命</span>.</li>
+              </ul>
+            </div>
+            <p>与创业为伴,点亮创新,是云建站的使命.</p>
+            <div class="hd-icon">
+              <i v-for="i in 5"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="two">
+      <div>
+        <div class="two-bg">
+          <div class="two-item">
+            <div class="two-cont">
+              <span>您的创业梦想需要一个非同凡响的网站</span>
+              <div>
+                云建站倾力打造的一个从网站建设.网网站运营管理到网站推广的自动化免费建站平台
+              </div>
+            </div>
+            <ul class="clearfloat">
+              <li v-for="i in arr">
+                <div><img :src="i.url" alt="" /></div>
+                <span>{{i.title}}</span>
+                <p>{{i.cont}}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="three">
+      <div>
+        <div class="three-bg">
+          <div class="three-item">
+            <div>
+              <i>
+                云建站自助平台
+              </i>
+              <span>上手快.颜值高.跨多屏.自传播.全免费.</span>
+            </div>
+            <span class="span">
+              在起飞页自助建站平台，您不需要任何编程基础，就能做出功能强大，效果出众的专业级网站，您所要<br />做的仅是选择网站模板、输入图片文字，以及鼠标拖拉拽；真正
+              的响应式建站，无论是在电脑的大屏<br />幕，还是手机小屏幕上，网站都能友好地展示；您的访客还可以注册成为会员，并进行在线购物；当然，<br />如果您需要多语言版
+              本，起飞页也可以轻松为您实现。
+            </span>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="four">
+      <div>
+        <div class="four-bg">
+          <div class="four-item">
+            <div class="four-cont">
+              <span>您的创业梦想需要一个非同凡响的网站</span>
+              <div>
+                云建站倾力打造的一个从网站建设.网网站运营管理到网站推广的自动化免费建站平台
+              </div>
+            </div>
+            <ul>
+              <li>
+                <div><img src="img/9.png" alt="" /></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="five">
+      <div>
+        <div class="five-bg">
+          <div class="five-item">
+            <ul class="clearfloat">
+              <li v-for="i in brr">
+                <div><img src="" alt="" /></div>
+                <span>{{i.title}}</span>
+                <p>{{i.cont}}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="six">
+      <div>
+        <div class="six-bg">
+          <div class="six-item">
+            <div class="six-cont">
+              <span>您的创业梦想需要一个非同凡响的网站</span>
+              <div>
+                云建站倾力打造的一个从网站建设.网网站运营管理到网站推广的自动化免费建站平台
+              </div>
+            </div>
+            <ul>
+              <li v-for="i in crr">
+                <div><img :src="i.url" alt="" /></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </template>
+</body>
+<script>
+    Vue.component("hd", {
+        template: "#hd",
+        data() {
+            return {};
+        }
+    });
+    Vue.component("two", {
+        template: "#two",
+        props: ["nav"],
+        data() {
+            return {
+                arr: this.nav
+            };
+        }
+    });
+    Vue.component("three", {
+        template: "#three",
+        data() {
+            return {};
+        }
+    });
+    Vue.component("four", {
+        template: "#four",
+        data() {
+            return {};
+        }
+    });
+    Vue.component("five", {
+        template: "#five",
+        props: ["tw"],
+        data() {
+            return {
+                brr: this.tw
+            };
+        }
+    });
+    Vue.component("six", {
+        template: "#six",
+        props: ["th"],
+        data() {
+            return {
+                crr: this.th
+            };
+        }
+    });
+    new Vue({
+        el: "#box",
+        data: {
+            arr: [{
+                url: "img/6.png",
+                title: "页面要炫酷,颜值要高",
+                cont: "人靠衣装马靠鞍,一个炫酷的网站才配得上创业者的新潮创 意.微企点采用HTML5最新技术,拥有大气舒适的界面和众多 精美模板,用起飞页制作一个高逼格.高颜值的炫酷网站, 让您的创业项目脱颖而出,非同凡响."
+            }, {
+                url: "img/7.png",
+                title: "简单易用,随需而变",
+                cont: "互联网创业瞬息万变,天下武功,唯快不破.创业者可以按需选择起飞页中精美的网页模板,预置栏目,快速添加和编辑网页无需编程,一步即创建一个炫酷高颜值的网站.网站从无到有,倚马可待."
+            }, {
+                url: "img/8.png",
+                title: "支持多终端跨屏展示",
+                cont: "在移动互联网全面渗透时,创业者需要一个随屏幕大小不同而自动伸缩的网站,这样同一份内容都可为不同终端用户带来最佳用户体验.微企点使用最新的HTML5响应式技术,网页界面随不同屏幕尺寸自动伸缩."
+            }],
+            brr: [{
+                url: "",
+                title: "跨屏展示",
+                cont: "一个炫酷的网站才配得上创业者的新潮创意.起飞页采用HTML5最新技术,拥有大气舒适的界面和众多精美模板"
+            }, {
+                url: "",
+                title: "页面酷炫",
+                cont: "一个炫酷的网站才配得上创业者的新潮创意.起飞页采用HTML5最新技术,拥有大气舒适的界面和众多精美模板"
+            }, {
+                url: "",
+                title: "简单易用",
+                cont: "一个炫酷的网站才配得上创业者的新潮创意.起飞页采用HTML5最新技术,拥有大气舒适的界面和众多精美模板"
+            }, {
+                url: "",
+                title: "完全免费",
+                cont: "一个炫酷的网站才配得上创业者的新潮创意.起飞页采用HTML5最新技术,拥有大气舒适的界面和众多精美模板"
+            }, {
+                url: "",
+                title: "跨屏展示",
+                cont: "一个炫酷的网站才配得上创业者的新潮创意.起飞页采用HTML5最新技术,拥有大气舒适的界面和众多精美模板"
+            }, {
+                url: "",
+                title: "页面酷炫",
+                cont: "一个炫酷的网站才配得上创业者的新潮创意.起飞页采用HTML5最新技术,拥有大气舒适的界面和众多精美模板"
+            }, {
+                url: "",
+                title: "简单易用",
+                cont: "一个炫酷的网站才配得上创业者的新潮创意.起飞页采用HTML5最新技术,拥有大气舒适的界面和众多精美模板"
+            }, {
+                url: "",
+                title: "完全免费",
+                cont: "一个炫酷的网站才配得上创业者的新潮创意.起飞页采用HTML5最新技术,拥有大气舒适的界面和众多精美模板"
+            }],
+            crr: [{
+                url: "https://ccdn.goodq.top/caches/38ad257d4bd31c1e897c7f2f4f0c83f3/aHR0cHM6Ly81NmM0MmI1MDY3NmYxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDIvMTQ1NTY0OTU4ODE0NTU2NDk0MTNiZzUtNDAweDMwMC5qcGc_p_p100_p_3D.jpg"
+            }, {
+                url: "https://ccdn.goodq.top/caches/38ad257d4bd31c1e897c7f2f4f0c83f3/aHR0cHM6Ly81NmM0MmI1MDY3NmYxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDIvMTQ1NTY0OTQ0MjIzLTQwMHgzMDAuanBn.jpg"
+            }, {
+                url: "https://ccdn.goodq.top/caches/38ad257d4bd31c1e897c7f2f4f0c83f3/aHR0cHM6Ly81NmM0MmI1MDY3NmYxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDIvMTQ1NTY0OTU5MjEwMS00MDB4MzAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg"
+            }, {
+                url: "https://ccdn.goodq.top/caches/38ad257d4bd31c1e897c7f2f4f0c83f3/aHR0cHM6Ly81NmM0MmI1MDY3NmYxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDIvMTQ1NTY0OTU5MDE0NTU2NDk0MTRiZzQtNDAweDMwMC5qcGc_p_p100_p_3D.jpg"
+            }, {
+                url: "https://ccdn.goodq.top/caches/38ad257d4bd31c1e897c7f2f4f0c83f3/aHR0cHM6Ly81NmM0MmI1MDY3NmYxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDIvMTQ1NTY0OTUyMTE4LTQwMHgzMDAuanBn.jpg"
+            }, {
+                url: "https://ccdn.goodq.top/caches/38ad257d4bd31c1e897c7f2f4f0c83f3/aHR0cHM6Ly81NmM0MmI1MDY3NmYxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDIvMTQ1NTY0OTUyMjE3LTQwMHgzMDAuanBn.jpg"
+            }, {
+                url: "https://ccdn.goodq.top/caches/38ad257d4bd31c1e897c7f2f4f0c83f3/aHR0cHM6Ly81NmM0MmI1MDY3NmYxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDIvMTQ1NTY0OTU4NzE0NTU2NDk0MTFiZzYtNDAweDMwMC5qcGc_p_p100_p_3D.jpg"
+            }, {
+                url: "https://ccdn.goodq.top/caches/38ad257d4bd31c1e897c7f2f4f0c83f3/aHR0cHM6Ly81NmM0MmI1MDY3NmYxLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDIvMTQ1NTY0OTU4NjE0NTU2NDk0MTBiZzctNDAweDMwMC5qcGc_p_p100_p_3D.jpg"
+            }]
+        }
+    });
+</script>
+
+</html>
