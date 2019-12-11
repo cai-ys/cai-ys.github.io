@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="vue.js"></script>
+    <script src="vue-resource.js"></script>
+    <title>自定义事件</title>
+    <style>
+        .tz {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="tz" v-tz></div>
+    </div>
+</body>
+<script>
+    Vue.directive("tz", function(a) {
+        console.log(a, b);
+        a.onmousedown = function(e) {
+            var evt = e || event;
+            var downX = evt.offsetX;
+            var downY = evt.offsetY;
+            onmousemove = function(e) {
+                var evt = e || event;
+                var mouseX = evt.clientX - downX;
+                var mouseY = evt.clientY - downY;
+                a.style.left = mouseX + "px";
+                a.style.top = mouseY + "px";
+            };
+        };
+
+        a.onmouseup = function() {
+            onmousemove = null;
+        };
+    });
+    new Vue({
+        el: "#box",
+        data: {}
+    });
+</script>
+
+</html>

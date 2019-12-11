@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="vue.js"></script>
+    <title>瀑布流</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #wrap {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" v-pbl></div>
+</body>
+<script>
+    Vue.directive("pbl", {
+        inserted(dom) {
+            var w = 180;
+            var gap = 9;
+
+            function createAdiv() {
+                var allDivs = [];
+                for (var i = 0; i < 50; i++) {
+                    var newDiv = createDiv();
+                    dom.appendChild(newDiv);
+                    allDivs.push(newDiv);
+                }
+                var col = Math.floor(dom.clientWidth / (w + gap));
+                console.log(col);
+                var heightArr = [];
+                allDivs.forEach(function(item, index) {
+                    if (index < col) {
+                        item.style.left = w * index + gap * (index + 1) + "px";
+                        item.style.top = gap + "px";
+                        heightArr.push(item.offsetHeight + gap);
+                    } else {
+                        var min = heightArr[0];
+                        var minIndex = 0;
+                        heightArr.forEach(function(h, i) {
+                            if (h <= min) {
+                                min = h;
+                                minIndex = i;
+                            }
+                        });
+                        item.style.left = w * minIndex + gap * (minIndex + 1) + "px";
+                        item.style.top = min + gap + "px";
+                        heightArr[minIndex] = item.offsetTop + item.offsetHeight;
+                    }
+                });
+            }
+            createAdiv();
+            window.onresize = function() {
+                if (document.documentElement.clientWidth <= dom.clientWidth) {
+                    return Math.floor(dom.clientWidth / (w + gap));
+                }
+            };
+            window.onscroll = function() {
+                console.log(dom.scrollHeight);
+                var t = document.documentElement.scrollTop || document.body.scrollTop;
+                var hd = document.documentElement.clientHeight;
+            };
+
+            function createDiv() {
+                var newDiv = document.createElement("div");
+                newDiv.style.width = "180px";
+                newDiv.style.height = parseInt(Math.random() * 200 + 100) + "px";
+                newDiv.style.backgroundColor = `rgb(${parseInt(
+            Math.random() * 256
+          )} ,${parseInt(Math.random() * 256)} ,${parseInt(
+            Math.random() * 256
+          )})`;
+                newDiv.style.display = "inline-block";
+                newDiv.style.position = "absolute";
+                return newDiv;
+            }
+        }
+    });
+    new Vue({
+        el: "#wrap"
+    });
+</script>
+
+</html>
