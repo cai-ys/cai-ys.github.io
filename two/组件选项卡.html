@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="vue.js"></script>
+    <title>选项卡</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+        
+        .box {
+            width: 400px;
+            margin: 0 auto;
+            border: 1px #000 solid;
+        }
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+        
+        li {
+            width: 100px;
+            height: 50px;
+            float: left;
+            background: coral;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        li.active {
+            background-color: #fff;
+        }
+        
+        .box .item {
+            text-align: center;
+            height: 50px;
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ka :city="arr" :cont="item"></ka>
+    </div>
+    <template id="ka">
+      <div class="box">
+        <ul>
+          <li v-for="(city,i) in city" :class="{active:i==it}" @click="btn(i)">
+            {{city}}
+          </li>
+        </ul>
+        <div class="item">{{cont[it]}}</div>
+      </div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+        Vue.component("ka", {
+            template: "#ka",
+            props: ["city", "cont"],
+            data() {
+                return {
+                    it: this.cont
+                };
+            },
+            methods: {
+                btn(i) {
+                    this.it = i;
+                }
+            }
+        });
+        new Vue({
+            el: "#box",
+            data: {
+                n: "",
+                arr: ["北京", "上海", "重庆", "天津"],
+                item: ["这是北京", "这是上海", "这是重庆", "这是天津"]
+            }
+        });
+    </script>
+</body>
+
+</html>

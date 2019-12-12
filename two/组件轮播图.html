@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="dist/css/swiper.min.css" />
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .swiper-container {
+            width: 600px;
+            height: 300px;
+        }
+        
+        .swiper-container img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <le :t="arr"></le>
+        <le :t="arr"></le>
+        <le :t="arr"></le>
+    </div>
+    <template id="le">
+      <div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="t,i in t">
+              <img :src="t.url" alt="" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </template>
+</body>
+<script src="vue.js"></script>
+<script src="dist/js/swiper.min.js"></script>
+<script>
+    window.onload = function() {
+        var mySwiper = new Swiper(".swiper-container", {
+            loop: true, // 循环模式选项
+            // 如果需要分页器
+            pagination: {
+                el: ".swiper-pagination"
+            },
+
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            }
+        });
+    };
+    Vue.component("le", {
+        template: "#le",
+        props: ["t"],
+        data() {
+            return {
+                i: this.t
+            };
+        }
+    });
+    new Vue({
+        el: "#box",
+        data: {
+            arr: [{
+                url: "https://w.wallhaven.cc/full/5w/wallhaven-5w6j85.jpg"
+            }, {
+                url: "https://w.wallhaven.cc/full/5w/wallhaven-5w6319.jpg"
+            }, {
+                url: "https://w.wallhaven.cc/full/ym/wallhaven-ymwggg.jpg"
+            }, {
+                url: "https://w.wallhaven.cc/full/p8/wallhaven-p8gj8j.jpg"
+            }, {
+                url: "https://w.wallhaven.cc/full/83/wallhaven-8396gk.jpg"
+            }, {
+                url: "https://w.wallhaven.cc/full/13/wallhaven-13gom9.jpg"
+            }, {
+                url: "https://w.wallhaven.cc/full/39/wallhaven-392lk9.jpg"
+            }]
+        }
+    });
+</script>
+
+</html>

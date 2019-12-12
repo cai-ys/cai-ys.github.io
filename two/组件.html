@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="vue.js"></script>
+    <title>组件</title>
+    <style></style>
+</head>
+
+<body>
+    <div id="box">
+        <le v-for="i in 10"></le>
+    </div>
+    <template id="le">
+      <div @click="a++">
+        您点击了 {{a}}次
+      </div>
+    </template>
+</body>
+<script>
+    Vue.component("le", {
+        template: "#le",
+        data() {
+            return {
+                a: 0
+            };
+        }
+    });
+    new Vue({
+        el: "#box",
+        data: {}
+    });
+</script>
+
+</html>

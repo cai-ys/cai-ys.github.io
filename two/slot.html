@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="vue.js"></script>
+    <title>插槽</title>
+</head>
+
+<body>
+    <div id="box">
+        <le>
+            <h3 slot="no1">关于我们</h3>
+            <div slot="no2">
+                <p>
+                    这些文字都是可以根据您的需要自行更改的，所以不要怕和您的需要不一样哦.
+                </p>
+                <p>图片的话都没有具体的大小要求，合适就好，开心就好</p>
+            </div>
+        </le>
+        <le>
+            <h3 slot="no1">联系我们</h3>
+            <div slot="no2">
+                <p>
+                    起飞页不仅是一个方便快捷的构建网站的自助建站平台，更重要的是，我们为中国用户提供了更多贴心的服务：网站备案、自动备份、快速恢复以及
+                </p>
+                <p>
+                    网站代建服务。我们使用了国内和香港最好的网络和云服务器，确保您的网站能够快速完美的呈现在访客面前。
+                </p>
+            </div>
+        </le>
+        <div style="margin-top: 100px;">
+            <le style="float: left; width: 50%;">
+                <h3 slot="no1">产品首页</h3>
+                <div slot="no2"></div>
+            </le>
+            <le style="float: right; width: 50%;">
+                <h3 slot="no1">产品介绍</h3>
+                <div slot="no2">
+                    <p>
+                        起飞页不仅是一个方便快捷的构建网站的自助建站平台，更重要的是，我们为中国用户提供了更多贴心的服务：网站备案、自动备份、快速恢复以及
+                    </p>
+                    <p>
+                        网站代建服务。我们使用了国内和香港最好的网络和云服务器，确保您的网站能够快速完美的呈现在访客面前。
+                    </p>
+                </div>
+            </le>
+        </div>
+    </div>
+    <template id="le">
+      <div>
+        <div style="text-align: center;">
+          <div>
+            <slot name="no1"></slot>
+          </div>
+          <div>
+            <span
+              style="width:150px;height:2px;background:#ccc;display:inline-block;margin-right: 20px;"
+            ></span>
+            <span>图标</span>
+            <span
+              style="width:150px;height:2px;background:#ccc;display:inline-block;margin-left: 20px;"
+            ></span>
+          </div>
+          <div style="margin-top: 30px;">
+            <slot name="no2"></slot>
+          </div>
+          <div>
+            <slot name="cont"></slot>
+          </div>
+        </div>
+      </div>
+    </template>
+</body>
+<script>
+    Vue.component("le", {
+        template: "#le",
+        data() {
+            return {};
+        }
+    });
+    new Vue({
+        el: "#box",
+        data: {}
+    });
+</script>
+
+</html>

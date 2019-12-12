@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="vue.js"></script>
+    <title>组件传值</title>
+</head>
+
+<body>
+    <div id="box">
+        <aa v-for="i in arr" :t="arr" style="width: 350px;"></aa>
+    </div>
+    <template id="aa">
+      <div style="height: 100px;float: left;margin: 0 30px;">
+        <div style="float: left;margin-right: 5px;margin-top: 15px;">
+          <img
+            :src="i.url"
+            style="border-radius: 50%;width: 50px;height: 50px;"
+          />
+        </div>
+        <div style="float: left;">
+          <p style="font-weight:bold;">{{i.title}}</p>
+          <span>{{i.tx}}</span>
+        </div>
+      </div>
+    </template>
+</body>
+<script>
+    Vue.component("aa", {
+        template: "#aa",
+        props: ["t"],
+        data() {
+            return {
+                i: this.t
+            };
+        }
+    });
+    new Vue({
+        el: "#box",
+        data: {
+            arr: [{
+                title: "免费试用",
+                url: "https://ccdn.goodq.top/caches/4a7b7daf436f3e5cb2e29433375ccd5d/aHR0cHM6Ly81NTlhNDQ3YzczMmVlLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTQvMDYvZmYxNDZkZjNiODBkMmE0M2FmNTZhYzY3Nzk3YWEwZDUtNDAweDQwMC5qcGc_p_p100_p_3D.jpg",
+                tx: "起飞页不仅是一个方便快捷的构建网站"
+            }, {
+                title: "一页式模板",
+                url: "https://ccdn.goodq.top/caches/4a7b7daf436f3e5cb2e29433375ccd5d/aHR0cHM6Ly81NTlhNDQ3YzczMmVlLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTQvMDYvZmYxNDZkZjNiODBkMmE0M2FmNTZhYzY3Nzk3YWEwZDUtNDAweDQwMC5qcGc_p_p100_p_3D.jpg",
+                tx: "满屏效果，信息更少，空白更多"
+            }, {
+                title: "响应式设计",
+                url: "https://ccdn.goodq.top/caches/4a7b7daf436f3e5cb2e29433375ccd5d/aHR0cHM6Ly81NTlhNDQ3YzczMmVlLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTQvMDYvZmYxNDZkZjNiODBkMmE0M2FmNTZhYzY3Nzk3YWEwZDUtNDAweDQwMC5qcGc_p_p100_p_3D.jpg",
+                tx: "合适就好，开心就好"
+            }]
+        }
+    });
+</script>
+
+</html>
