@@ -1,0 +1,232 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="vue.js"></script>
+    <script src="vue-resource.js"></script>
+    <link rel="stylesheet" href="jr.css" />
+    <title>金融</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="box1">
+            <le :nav="arr"></le>
+        </div>
+        <div id="box2">
+            <hd></hd>
+            <pass></pass>
+            <money></money>
+            <maps></maps>
+        </div>
+    </div>
+    <template id="le">
+      <div>
+        <div class="logo">
+          <img
+            src="https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cHM6Ly81ZDM5NjllNDU0MTBjLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvNmMwMWZiNzVjMmNlMjZlZGU4YmEwNWNlNzBhMzA1N2YucG5n.png"
+          />
+        </div>
+        <div class="nav">
+          <ul>
+            <li v-for="i in arr">
+              <a href="i.url">{{ i.title }}</a
+              ><i></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </template>
+    <template id="hd">
+      <div>
+        <div class="item clearfloat">
+          <div class="left">
+            <h4>践行惠普金融<br />助力<i>美好生活</i></h4>
+            <div class="jianjie">
+              我们的网站构建器，将传统的编码工作转化为直观的拖<br />拽操作和文字录入。在这里，您仅需花上10分钟便可以<br />完成一个H5响应式网站，您会发现完全不需要编写一<br />行代码，这就是起飞页自助建站的神奇之处。
+            </div>
+            <div class="bt">
+              <div style="background: rgb(7,104,238);">联系我们</div>
+              <div>点我咨询</div>
+            </div>
+          </div>
+          <div class="right">
+            <img
+              src="https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cHM6Ly81ZDM5NjllNDU0MTBjLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvM2Q1MjJlZDZlYTZiM2I2YWEwYmVjNGM3YTBkMjcxNzIucG5n.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="pass">
+      <div>
+        <div class="item2">
+          <h4>使用流程</h4>
+          <div class="ff">
+            我们的网站构建器，将传统的编码工作转化为直观的拖拽操作和文字录入。在这里，您仅需花上<br />10分钟便可以完成一个H5响应式网站。
+          </div>
+          <div class="bz">
+            <div>
+              <i>
+                <img
+                  src="https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cDovLzVkMzk2OWU0NTQxMGMudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxOS8wNy85Y2VmNzcxOGEzZTNiNTBlYzA2YWUzNjYxMzZjMjYxNi5wbmc_p_p100_p_3D.png"
+                  alt=""
+              /></i>
+              <p>创建账户</p>
+            </div>
+            <div>
+              <i>
+                <img
+                  src="https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cDovLzVkMzk2OWU0NTQxMGMudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxOS8wNy8yNGQ5ZmE0MzI4ZGI1NjEwZTQwODkyZmJhZjQxYTNlNS5wbmc_p_p100_p_3D.png"
+                  alt=""
+              /></i>
+              <p>安全保障</p>
+            </div>
+            <div>
+              <i>
+                <img
+                  src="https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cDovLzVkMzk2OWU0NTQxMGMudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxOS8wNy80ODVmOTZhYTgyYWEzN2E4ODNhYzcxZWMwODEwMDlhZC5wbmc_p_p100_p_3D.png"
+                  alt=""
+              /></i>
+              <p>绑定付款</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="money">
+      <div>
+        <div class="item3 clearfloat">
+          <div class="le">
+            <div class="first">
+              <p>近期货币</p>
+              <div class="jd">购买进度</div>
+            </div>
+            <div class="two">
+              <span>00</span><i>天</i> <span>00</span><i>时</i> <span>00</span
+              ><i>分钟</i> <span>00</span><i>秒</i>
+            </div>
+            <div class="three">
+              <div>购买进度80%</div>
+            </div>
+            <div class="four">联系我们</div>
+          </div>
+          <div class="ri">
+            <div class="title">最值得信赖的平台</div>
+            <div class="yd">
+              移动互联网的稳定快速发展带动了货币行业的迅速崛起，在<br />如此庞大的货币海洋中，哪些是您所需要的货币呢？
+            </div>
+            <div class="nv">
+             <div><i>√</i></span
+                  >享受专属优惠券</div>
+             <div><i>√</i></span
+                  >用于商城消费 先用后付</div>
+             <div><i>√</i></span
+                  >随心付，3/6/9/12期随心付</div>
+            </div>
+            <div class="tp">
+              <img
+                src="https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cDovLzVkMzk2OWU0NTQxMGMudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxOS8wNy8zZTA2NTU1NDVjZDY4YmIyNGZlOWVjM2E2YjMzNzhlMS5wbmc_p_p100_p_3D.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="maps">
+      <div>
+        <div class="item4">
+          <h4>全球服务</h4>
+          <div class="js">
+            我们的网站构建器，将传统的编码工作转化为直观的拖拽操作和文字录入。在这里，您仅需花上<br />10分钟便可以完成一个H5响应式网站。
+          </div>
+          <div class="mp">
+            <img
+              src="https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cDovLzVkMzk2OWU0NTQxMGMudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxOS8wNy8yMTg3ZWYyNmI2MDdiZmZlMDQ1MzgyMTNiNDYxMmRiYy5qcGc_p_p100_p_3D.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </template>
+</body>
+<script>
+    var aa = box1.offsetHeight;
+    document.addEventListener("scroll", onScroll);
+
+    function onScroll(e) {
+        if (window.scrollY >= aa) {
+            console.log(1)
+            box1.classList.add("posi")
+        } else {
+            box1.classList.remove("posi")
+        }
+    }
+
+    Vue.component("le", {
+        template: "#le",
+        props: ["nav"],
+        data() {
+            return {
+                arr: this.nav
+            };
+        }
+    });
+    Vue.component("hd", {
+        template: "#hd",
+        data() {
+            return {};
+        }
+    });
+    Vue.component("pass", {
+        template: "#pass",
+        data() {
+            return {};
+        }
+    });
+    Vue.component("money", {
+        template: "#money",
+        data() {
+            return {};
+        }
+    });
+    Vue.component("maps", {
+        template: "#maps",
+        data() {
+            return {};
+        }
+    });
+    new Vue({
+        el: "#wrap",
+        data: {
+            arr: [{
+                title: "首页",
+                url: "https://5d3969e45410c.t73.qifeiye.com/"
+            }, {
+                title: "使用流程",
+                url: "http://5d3969e45410c.t73.qifeiye.com/#bit_2bfvl"
+            }, {
+                title: "全球服务",
+                url: "http://5d3969e45410c.t73.qifeiye.com/#bit_yb7l4"
+            }, {
+                title: "关于我们",
+                url: "http://5d3969e45410c.t73.qifeiye.com/#bit_mymum"
+            }, {
+                title: "专家团队",
+                url: "http://5d3969e45410c.t73.qifeiye.com/#bit_x11md"
+            }, {
+                title: "联系我们",
+                url: "http://5d3969e45410c.t73.qifeiye.com/#bit_7gqtc"
+            }, {
+                title: "合作伙伴",
+                url: "http://5d3969e45410c.t73.qifeiye.com/#bit_rur9g"
+            }]
+        }
+    });
+</script>
+
+</html>
