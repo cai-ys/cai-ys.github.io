@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="dist/css/swiper.min.css" />
+    <link rel="stylesheet" href="lb.css" />
+    <link rel="stylesheet" href="fan.css" />
+    <link rel="stylesheet" href="title.css" />
+    <link rel="stylesheet" href="news.css" />
+    <link rel="stylesheet" href="cp.css" />
+    <link rel="stylesheet" href="xg.css" />
+    <link rel="stylesheet" href="yq.css" />
+    <link rel="stylesheet" href="vl.css" />
+    <link rel="stylesheet" href="zy.css">
+    <title>医疗</title>
+</head>
+
+<body>
+    <div id="box">
+        <div class="header">
+            <div class="header_wrap clearfloat">
+                <div class="hd_item">
+                    <div class="hd_logo">
+                        <img src="https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTcvMDYvYTNkMjAyZDQ0M2I5NzNiYThiYjkyNGUzYWU3N2UzYjYucG5n.png" alt="" />
+                    </div>
+                    <div class="hd_nav">
+                        <ul>
+                            <li><a href="#/">首页</a></li>
+                            <li><a href="#/no2">产品系列</a></li>
+                            <li><a href="#/no3">新闻中心</a></li>
+                            <li><a href="#/no4">加入我们</a></li>
+                            <li><a href="#/no5">联系我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="conent" style="padding: 50px 0;">
+            <router-view></router-view>
+        </div>
+        <div class="footer">
+            <div class="fd_wrap clearfloat">
+                <div class="it it1">
+                    <h4>关于我们</h4>
+                    <p>
+                        可视化图文内容编辑让网站制作和维护成为一件轻松的事。普通用户还是专业制作人员都能使用起飞页设计出最具专业水准的网站。
+                    </p>
+                </div>
+                <div class="it it2">
+                    <h4>联系我们</h4>
+                    <div><span> 咨询电话 : 4000-000-100</span></div>
+                    <div><span>商务合作 : abc@abcde.com</span></div>
+                    <div><span>联系我们 : abcd@abcde.com</span></div>
+                </div>
+                <div class="it it2">
+                    <h4>帮助与支持</h4>
+                    <div><span>帮助中心</span></div>
+                    <div><span>服务条款</span></div>
+                    <div><span>常见问题</span></div>
+                </div>
+                <div class="it it4">
+                    <h4>关注我们</h4>
+                    <div>
+                        <img src="https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cDovLzU3YTdlNmFhZjJmNzgudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8wOS84ZjM0YTQ3OWZiZjExZWE5NzUwMmI2ZWUyYWIwODJhNS5qcGc_p_p100_p_2FYXR0YWNobWVudF9pZD0xMDg3Mw_p_p100_p_3D_p_p100_p_3D.jpg"
+                            alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <template id="no1">
+      <div>
+        <div class="bg"></div>
+        <div class="cont_hd">
+          <div class="cont_item">
+            <div class="cont_title">
+              <div>
+                <h3 style="color: rgb(198,198,198);font-size: 20px;">
+                  主推产品
+                </h3>
+              </div>
+              <div style="color: #bfbfbf;font-size: 12px;height: 54px;">
+                PRODUCT
+              </div>
+              <span
+                style="width: 50px;height: 1px;background: #e30098;display: block;margin: 0 auto;"
+              ></span>
+            </div>
+            <ve style="width: 600px;margin: 0 auto;" :box_arr="arr"></ve>
+            <!-- <lb :t="arr"></lb> -->
+            <div class="um">
+              <span style="font-size: 68px;font-weight: bold">Um</span>
+              <span style="font-size: 28px;font-weight: bold;">360</span>
+            </div>
+            <div class="um_x">精细快速低剂量成像，高效安全扫描体验</div>
+            <div class="al">
+              <fan :fan="js" style="width: 1260px;margin: 40px 0;"></fan>
+            </div>
+          </div>
+          <div class="cp_one">
+            <tl>
+              <h3 slot="no1">NEWS</h3>
+              <div slot="no2">
+                <p>产品系列</p>
+              </div>
+            </tl>
+          </div>
+          <div class="cpjs">
+            <xg :aa="list" style="width: 1220px;margin: 0 auto;"></xg>
+          </div>
+          <div class="cp_two">
+            <tl>
+              <h3 slot="no1">PRODUCT</h3>
+              <div slot="no2">
+                <p>产品系列</p>
+              </div>
+            </tl>
+          </div>
+          <div class="cp_box">
+            <cp :op="cp" style="width: 1200px;margin: 50px auto;"></cp>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="no2">
+      <div>
+        <div class="chanpin">
+          <div
+            class="clearfloat"
+            style="margin: 0 auto;padding: 0 40px; height: 400px;width: 1180px;"
+          >
+            <div class="chanpin_le">
+              <lb :t="arr" style="width: 590px;"></lb>
+            </div>
+            <div class="chanpin_ri">
+              <div style="margin: 50px auto;">
+                <div class="um" style="text-align: center;">
+                  <span style="font-size: 52px;font-weight: bold">Um</span>
+                  <span style="font-size: 28px;font-weight: bold;">360</span>
+                </div>
+                <div
+                  class="um_x"
+                  style="font-size: 16px;text-align: center;padding: 12px 0 12px 6px;"
+                >
+                  精细快速低剂量成像，高效安全扫描体验
+                </div>
+                <div class="oimg">
+                  <ul class="clearfloat">
+                    <li v-for="i in arr"><img :src="i" alt="" /></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="height: 1000px;">
+          <tl style="margin-top: 100px;">
+            <h3 slot="no1">PRODUCT</h3>
+            <div slot="no2">
+              <p>产品系列</p>
+            </div>
+          </tl>
+          <yq :sb="osb" style="width: 1190px;margin: 30px auto;"></yq>
+        </div>
+      </div>
+    </template>
+    <template id="no3">
+      <div>
+         <div class="big_box">
+          <div class="big_cont clearfloat">
+            <div class="big_le">
+                <p class="pp"><span>▼</span>联系我们</p>
+                <p class="pps"><span>▼</span><a href="" style="color:#999;">企业动态</a></p>
+                <p class="pps"><span>▼</span><a href="" style="color:#999;">行业资讯</a></p>
+            </div>
+            <div class="big_ri">
+                   <news :aa="list" style="width: 888px;"></news>
+            </div>
+        </div>
+      </div>
+    </template>
+    <template id="no4">
+      <div>
+        <div class="big_box">
+          <div class="big_cont clearfloat">
+            <div class="big_le">
+                <p class="pp"><span>▼</span><a href="">联系我们</a></p>
+            </div>
+            <div class="big_ri">
+                <le style="margin-bottom: 50px"></le>
+                <le style="width: 888px;"></le>
+            </div>
+        </div>
+    </div>
+      </div>
+    </template>
+    <template id="no5">
+      <div>
+        <div class="last_title">
+          <ve style="width: 100%;margin: 0 auto;" :box_arr="arr"></ve>
+        </div>
+        <div class="last_cont">
+      <div>
+        <div style="height: 536px;">
+            <div style="width: 1200px;height: 380px;margin: 0 auto;">
+                <div style="width: 290px;height: 380px;float: left;padding: 0 5px;">
+                    <p style="width: 267px;height: 40px;background: #999;font-size: 14px;color: #fff;line-height: 40px;margin-bottom: 30px;"> <span style="padding: 0 8px;" class="glyphicon glyphicon-align-justify"></span>联系我们</p>
+                    <p style="height: 25px; font-size: 16px;margin-bottom: 0;">Um生物科技有限公司</p>
+                    <p style="height: 24px;font-size: 14px;margin-bottom: 20px;color: #a9a9a9;">Um biotechnology Co.,Ltd</p>
+                    <p class="xs">联系电话 : 1000 8000</p>
+                    <p class="xs">销售热线：400 8888 8888</p>
+                    <p class="xs">技术服务：400 6666 6666</p>
+                    <p class="xs">公司传真：1000 8000</p>
+                    <div style="font-size: 14px;line-height:32px;margin-bottom: 30px; color: #808080;">苏州市工业园区金鸡湖大道0号某某大厦0室</div>
+                    <div style="font-size: 24px;">
+                        <span style="font-size: 18px;">QQ</span>
+                        <span style="font-size: 18px;">微博</span>
+                        <span style="font-size: 18px;">飞信</span>
+                        <span style="font-size: 18px;">微信</span>
+                        <span style="font-size: 18px;">脸书</span>
+                    </div>
+                </div>
+             <div style="height:380px;width:890px;margin-bottom:100px;z-index:'10';float: left;padding: 0 5px;" id="dituContent"></div>
+        </div>
+      </div>
+    </template>
+    <template id="lb">
+      <div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="i in arrs">
+              <img :src="i" alt="" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </template>
+    <template id="fan">
+      <div>
+        <ul class="clearfloat oul">
+          <li class="fan_box" v-for="i in jss">
+            <div class="fan_c">
+              <div class="fan_title">{{i.title}}</div>
+              <span class="fan_cont">{{i.fan}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </template>
+    <template id="tl">
+      <div>
+        <div>
+          <div class="t_t">
+            <slot name="no1"></slot>
+          </div>
+          <div class="t_c">
+            <slot name="no2"></slot>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="xg">
+      <div>
+        <ul class="clearfloat">
+          <li class="xg_cont" v-for="i in arr">
+            <div class="hz">
+              <div class="xg_title">{{i.cont}}</div>
+              <span class="cd"></span>
+              <div class="xg_item">
+                <p>{{i.item}}</p>
+              </div>
+              <div class="bt">—></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </template>
+    <template id="news">
+      <div>
+        <div class="new_cont clearfloat" v-for="i in arr">
+          <div class="new_cont_le">
+            <img :src="i.url" alt="" />
+          </div>
+          <div class="new_cont_ri">
+            <div class="aaa"><a href="">{{i.time}}</a></div>
+            <div class="bbb"><span>{{i.cont}}</span></div>
+            <div>
+              <p>{{i.item}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="cp">
+      <div>
+        <ul class="clearfloat allcp">
+          <li v-for="i in cps">
+            <div class="cp_img"><img :src="i.url" alt="" /></div>
+            <p>{{i.tit}}</p>
+            <span>{{i.con}}</span>
+          </li>
+        </ul>
+      </div>
+    </template>
+    <template id="yq">
+      <div>
+        <div class="yq_box clearfloat">
+          <div class="yq_li" v-for="i in sbs">
+            <div class="boder">
+              <div class="yq_cont">
+                <div style="height: 224px;">
+                  <img :src="i.url" alt="" style="width: 100%;height: 100%;" />
+                </div>
+                <p style="margin: 0 0 5px;padding: 25px 0 3px;font-size: 14px;">
+                  {{i.name}}
+                </p>
+                <span>{{i.title}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="ve">
+      <div style="position:relative">
+        <transition :name="tran" v-for="(i,$index) in arr">
+          <div style="width: 100%;position: absolute;" v-show="$index==index">
+            <img :src="i" width="100%" ref="img" />
+          </div>
+        </transition>
+        <div class="l" @click="l">
+          <
+        </div>
+        <div class="r" @click="r">
+          >
+        </div>
+      </div>
+    </template>
+    <template id="le">
+      <div>
+        <div class="cont">
+          <div class="c_title">
+            <h4 style="font-weight: bold;">区域销售经理</h4>
+            <div style="color: #ccc;font-size: 12px;line-height: 24px;">
+              发布日期：2016-08-10
+            </div>
+          </div>
+          <div style="border-bottom: 1px solid #ccc;padding-bottom: 20px;margin-bottom: 33px;">
+            <div class="c_cen clearfloat">
+            <div>公司事业部：<span style="font-weight: bold;">某某公司</span style="font-weight: bold;""></div>
+            <div>工作地点：<span style="font-weight: bold;">北京</span></div>
+            <div>职位性质：<span style="font-weight: bold;">制造/生产/加工</span></div>
+            <div>招聘人数：<span style="font-weight: bold;">10人</span></div>
+          </div>
+            <div class="c_jj">
+            <p style="color: black;">职位概述：</p>
+            <div style="color: #808080;font-size: 14px;line-height: 24px;">
+              负责公司全产品华东区域分销工作。
+            </div>
+          </div>
+           <div class="c_gz">
+            <p style="color: black;">职位描述：</p>
+           <span style="color: #808080;font-size: 14px;">
+            1. 负责指定地区设备的市场推广工作，完成各项销售目标；<br>
+            2. 负责完成订单并跟进，确保产品能够及时安装，提高客户满意度；<br>
+            3. 参与招投标工作，协调市场、产品、销售、物流和服务部门参与项目后期工作；<br>
+            4. 参与区域市场营销活动,了解参与此类活动的客户信息和动态；<br>
+            5. 定期拜访客户，收集客户需求信息并形成拜访报告,协调相关部门解决客户提出的问题；<br>
+            6. 参加销售培训，完成市场信息的收集和分析，周期性向销售经理汇报总结。<br>
+           </span>
+          </div>
+          <div class="c_tj">
+            <p style="color: black;">任职条件:</p>
+           <span style="color: #808080;font-size: 14px;">
+            1. 理工科相关专业，大学本科以上学历；<br>
+            2. 5年以上相关行业销售岗位经验，有大型设备销售经验者优先；<br>
+            3. 掌握公司所在的行业动态，了解公司所经营的产品技术特点；<br>
+            4. 优秀的沟通与执行能力，良好的客户服务意识，高度的敬业精神；<br>
+            5. 熟练使用WORD，EXCEL，POWERPOINT等办公软件，良好的英语应用能<br>
+           </span>
+        </div>
+          </div>
+          <div style="width: 142px;height: 42px;border-radius: 3px;background: #e30083;line-height: 42px;text-align: center;color: white;">申请该职位</div>
+      </div>
+    </template>
+</body>
+<script src="vue.js"></script>
+<script src="vue-router.js"></script>
+<script src="component.js"></script>
+<script src="dist/js/swiper.min.js"></script>
+<script>
+    var routes = [{
+        path: "/",
+        component: {
+            template: "#no1",
+            data() {
+                return {
+                    arr: [
+                        "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvODBkMjY5NjYzNDJmNTM1ZjdkYmEwMjY2OTNmMmQ5ZjcucG5n.png",
+                        "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvODBkMjY5NjYzNDJmNTM1ZjdkYmEwMjY2OTNmMmQ5ZjcucG5n.png",
+                        "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvODBkMjY5NjYzNDJmNTM1ZjdkYmEwMjY2OTNmMmQ5ZjcucG5n.png"
+                    ],
+                    js: [{
+                        title: "1200+",
+                        fan: "成功案例"
+                    }, {
+                        title: "010+",
+                        fan: "解决方案"
+                    }, {
+                        title: "200+",
+                        fan: "合作伙伴"
+                    }, {
+                        title: "050+",
+                        fan: "技术专利"
+                    }],
+                    list: [{
+                        cont: "医疗PPP有望成后起之秀 概念股早...",
+                        item: "当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。..."
+                    }, {
+                        cont: "国产高端医疗设备凭高性价比应...",
+                        item: "当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。..."
+                    }, {
+                        cont: "医疗器械国产化命脉“供应商”转...",
+                        item: "当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。..."
+                    }],
+                    cp: [{
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTcvMDYvMDdiNzYwNTRjMjQwOWZmN2YwM2MxZTFlMjlmOTk4YTYtMjMweDIzMC5wbmc_p_p100_p_3D.png",
+                        tit: "THE PROJECT",
+                        con: "NAME 0"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTcvMDYvOTAxNzllOTM4ZmFhMTgzZjhiMDFjODgwZjAzNzk3NjctMjMweDIzMC5wbmc_p_p100_p_3D.png",
+                        tit: "THE PROJECT",
+                        con: "NAME 02"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTcvMDYvM2JlMmUyNDFkNTM4NjBmZmRkNzMzNjNiOWJiMjdjNTMtMjMweDIzMC5wbmc_p_p100_p_3D.png",
+                        tit: "THE PROJECT",
+                        con: "NAME 03"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTcvMDcvZjZmODI0YzZlNGJlZWQ1ZDI0ZmRlZGRlZDBkZmY2ZDktMjMweDIzMC5wbmc_p_p100_p_3D.png",
+                        tit: "THE PROJECT",
+                        con: "NAME 04"
+                    }]
+                };
+            }
+        }
+    }, {
+        path: "/no2",
+        component: {
+            template: "#no2",
+            data() {
+                return {
+                    arr: [
+                        "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvODBkMjY5NjYzNDJmNTM1ZjdkYmEwMjY2OTNmMmQ5ZjcucG5n.png",
+                        "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvZmVkNjAyMDAyZTZiNjRkYjVhZDg0MmEwN2U5Yjg5ODYucG5n.png",
+                        "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvNzY5MDExMmQ0MjIzN2Y5YTg0OWVjNjc0N2NmOGMxYWYucG5n.png"
+                    ],
+                    osb: [{
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvODliOWE1ZWI3YjZhYjZkNWZjZjFiNjEyNDAyOWFhMWYtMjEweDIxMC5qcGc_p_p100_p_3D.jpg",
+                        name: "仪器设备Um350c",
+                        title: "编辑设备副标题"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvOTQ3M2MwZWI4ODE4ZmYzM2Y5OGFmYWY1ODg2N2I4ZjgtMjEweDIxMC5qcGc_p_p100_p_3D.jpg",
+                        name: "仪器设备Um390i",
+                        title: "编辑设备副标题"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvY2Y4YzM5NDJmMjU5YThmYmMzMDA3OWNiMTQ2NjE2MWYtMjEweDIxMC5qcGc_p_p100_p_3D.jpg",
+                        name: "仪器设备Um250c",
+                        title: "编辑设备副标题"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvMDE1MmFkNTI5MjBkOWM3YTY4NmM5MjZjOTNhZTczMmMtMjEweDIxMC5qcGc_p_p100_p_3D.jpg",
+                        name: "仪器设备Um250c",
+                        title: "编辑设备副标题"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvOTVlZjIxODM2NWUyOGJiODdhNjkwNWE3NDI4N2IxNWQtMjEweDIxMC5qcGc_p_p100_p_3D.jpg",
+                        name: "仪器设备Qm325",
+                        title: "编辑设备副标题"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvMjZmZDhlZTY1YmM4YTcwZWZkNGNhOWI3OWFmMDg1NWYtMjEweDIxMC5qcGc_p_p100_p_3D.jpg",
+                        name: "仪器设备Um110",
+                        title: "编辑设备副标题"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTcvMDYvN2Q4YTg0M2ZjODJjNDE3ODdkNTUxNTI1MGZjOWJjZDQtMjEweDIxMC5qcGc_p_p100_p_3D.jpg",
+                        name: "仪器设备Um215",
+                        title: "编辑设备副标题"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTcvMDYvMWM4ODFjMGI3Y2JlMzcwZDUwZjNlOGIzN2U1NzE5ODYtMjEweDIxMC5qcGc_p_p100_p_3D.jpg",
+                        name: "仪器设备Um309",
+                        title: "编辑设备副标题"
+                    }]
+                };
+            }
+        }
+    }, {
+        path: "/no3",
+        component: {
+            template: "#no3",
+            data() {
+                return {
+                    list: [{
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvYjg2MjE5ZjFiZGY5NGI4ZjI1NGJlNzRmM2FmOWYwYTQtMTYweDEwMC5qcGc_p_p100_p_3D.jpg",
+                        time: "发布日期：2017年03月15",
+                        cont: "医疗PPP有望成后起之秀 概念股早盘活",
+                        item: "当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。..."
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvYjNiYTc5YzZhYWVmOGRmMjQzNmVmNjNlYjY1OWFiODYtMTYweDEwMC5qcGc_p_p100_p_3D.jpg",
+                        time: "发布日期：2017年03月15",
+                        cont: "国产高端医疗设备凭高性价比应对“GPS”垄断局面",
+                        item: "当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。..."
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvYjE2N2Y5ZWFhNjZiZWUwMWI3YzAzNzZlODI2OGQxNTYtMTYweDEwMC5qcGc_p_p100_p_3D.jpg",
+                        time: "发布日期：2017年03月15",
+                        cont: "医疗器械国产化命脉：“供应商”转型“合作伙伴”",
+                        item: "当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。..."
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvZTY0ZDU0MTRhMzBlMjE5ZjUyNTE3OTVjNmQ1NThhZGMtMTYweDEwMC5qcGc_p_p100_p_3D.jpg",
+                        time: "发布日期：2017年03月15",
+                        cont: "	医疗器械9只概念股价值解析",
+                        item: "当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。..."
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDgvZWY5ZGYwNDViYzVmZDE0ZjA4ZTRiMjA1YzYxNjYyZDQtMTYweDEwMC5qcGc_p_p100_p_3D.jpg",
+                        time: "发布日期：2017年03月15",
+                        cont: "医疗器械抽验 7批产品不合标准",
+                        item: "当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。..."
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvNTAzZmQ2N2U3OTkxMDU5NTFmOGUwNDk0ODU1ZTVjNTEtMTYweDEwMC5qcGc_p_p100_p_3D.jpg",
+                        time: "发布日期：2017年03月15",
+                        cont: "第五届生物产业大会 与专家共议未来发展",
+                        item: "当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。..."
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDgvYmVlNWI0MWE3NmE4ZWFhZTNhMmFmMDU5Y2Y3YWRjY2UtMTYweDEwMC5qcGc_p_p100_p_3D.jpg",
+                        time: "发布日期：2017年03月15",
+                        cont: "	第五届生物产业大会 与专家共议未来发展",
+                        item: "当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。..."
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvOTVlZjIxODM2NWUyOGJiODdhNjkwNWE3NDI4N2IxNWQtMTYweDEwMC5qcGc_p_p100_p_3D.jpg",
+                        time: "发布日期：2017年03月15",
+                        cont: "	医疗器械行业上半年利润增速达29.30%",
+                        item: "当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。..."
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTcvMDYvMTBjMjRlN2I2NmRmMWQ5MjZiNzMwZjZjNTVmZmM4Y2UtMTYweDEwMC5wbmc_p_p100_p_3D.png",
+                        time: "发布日期：2017年03月15",
+                        cont: "20种进口医疗器械产品减税力度空前",
+                        item: "当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。..."
+                    }]
+                };
+            }
+        }
+    }, {
+        path: "/no4",
+        component: {
+            template: "#no4"
+        }
+    }, {
+        path: "/no5",
+        component: {
+            template: "#no5",
+            data() {
+                return {
+                    arr: [
+                        "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvOGJhMDIzYjE1NGFmZWFkM2FjYTI3ZTQ4MmM1ZGM1MjMuanBn.jpg|^|https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvZjkyMmI3YTQyZDYxMDQ0MWVmMzI0NjdkZDYxMDJmYzYuanBn.jpg",
+                        "https://ccdn.goodq.top/caches/40c05a76d970c388d38b924930a6f580/aHR0cHM6Ly81N2E3ZTZhYWYyZjc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTYvMDkvZjkyMmI3YTQyZDYxMDQ0MWVmMzI0NjdkZDYxMDJmYzYuanBn.jpg"
+                    ]
+                };
+            },
+            mounted() {
+                function initMap() {
+                    createMap(); //创建地图
+                    setMapEvent(); //设置地图事件
+                    addMapControl(); //向地图添加控件
+                }
+
+                //创建地图函数：
+                function createMap() {
+                    var map = new BMap.Map("dituContent"); //在百度地图容器中创建一个地图
+                    var point = new BMap.Point(121.48054, 31.230989); //定义一个中心点坐标
+                    map.centerAndZoom(point, 12); //设定地图的中心点和坐标并将地图显示在地图容器中
+                    window.map = map; //将map变量存储在全局
+                }
+
+                //地图事件设置函数：
+                function setMapEvent() {
+                    // map.enableDragging(); //启用地图拖拽事件，默认启用(可不写)
+                    map.enableScrollWheelZoom(); //启用地图滚轮放大缩小
+                    map.enableDoubleClickZoom(); //启用鼠标双击放大，默认启用(可不写)
+                    map.enableKeyboard(); //启用键盘上下左右键移动地图
+                }
+
+                //地图控件添加函数：
+                function addMapControl() {
+                    //向地图中添加缩放控件
+                    var ctrl_nav = new BMap.NavigationControl({
+                        anchor: BMAP_ANCHOR_TOP_LEFT,
+                        type: BMAP_NAVIGATION_CONTROL_LARGE
+                    });
+                    map.addControl(ctrl_nav);
+                    //向地图中添加缩略图控件
+                    var ctrl_ove = new BMap.OverviewMapControl({
+                        anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+                        isOpen: 1
+                    });
+                    map.addControl(ctrl_ove);
+                    //向地图中添加比例尺控件
+                    var ctrl_sca = new BMap.ScaleControl({
+                        anchor: BMAP_ANCHOR_BOTTOM_LEFT
+                    });
+                    map.addControl(ctrl_sca);
+                }
+
+                initMap(); //创建和初始化地图
+            }
+        },
+    }];
+    var router = new VueRouter({
+        routes
+    });
+    new Vue({
+        el: "#box",
+        router,
+        data: {
+            type: true
+        },
+        // mounted() {
+        //     var oa = document.querySelectorAll('.hd_nav ul li a');
+        //     console.log(oa)
+        //     for (i = 0; i < oa.length; i++) {
+        //         oa[i].onclick = function() {
+
+        //         }
+        //     }
+        // },
+    });
+</script>
+
+</html>

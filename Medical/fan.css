@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+
+.clearfloat {
+    zoom: 1;
+}
+
+.fan_box {
+    float: left;
+    width: 24.5%;
+    color: #aaa;
+    text-align: center;
+}
+
+.fan_box:hover {
+    color: #e80083 !important;
+}
+
+.fan_c {
+    border-right: 2px solid #ccc;
+}
+
+.fan_title {
+    font-size: 42px;
+    padding: 0 0 5px;
+}
+
+.fan_cont {
+    font-size: 14px;
+}

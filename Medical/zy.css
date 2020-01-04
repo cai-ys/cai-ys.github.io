@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+
+.clearfloat {
+    zoom: 1;
+}
+
+.cont {
+    height: auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+}
+
+.c_title {
+    margin: 0 0 20px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.c_cen {
+    margin-bottom: 20px;
+}
+
+.c_cen div {
+    float: left;
+    line-height: 26px;
+    width: 50%;
+}
+
+.c_jj {
+    margin-bottom: 20px;
+}
+
+.c_gz {
+    margin-bottom: 30px;
+}
+
+.c_tj {
+    margin-bottom: 30px;
+}

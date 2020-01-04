@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+
+.clearfloat {
+    zoom: 1;
+}
+
+.xg_cont {
+    float: left;
+    width: 29%;
+    min-height: 300px;
+    padding: 15px;
+}
+
+.hz {
+    border: 0.5px solid rgb(221, 221, 221);
+    padding: 50px 40px 40px;
+}
+
+.xg_title {
+    margin: 0 0 5px;
+    padding: 0 0 20px;
+    font-size: 16px;
+    color: #555;
+    width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.xg_cont .cd {
+    width: 0%;
+    display: block;
+    height: 0.8px;
+    transition: 0.3s;
+    background: black;
+}
+
+.xg_cont :hover span {
+    width: 100%;
+}
+
+.xg_cont :hover .hz {
+    border: 0.5px solid rgb(163, 163, 163) !important;
+}
+
+.xg_cont :hover .bt {
+    border: 0.5px solid rgb(163, 163, 163) !important;
+    color: rgb(163, 163, 163) !important;
+}
+
+.xg_item {
+    padding: 15px 0 10px;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.xg_item p {
+    color: #adadad;
+}
+
+.bt {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: rgb(221, 221, 221);
+    padding: 5px 8px;
+    border: 1px solid rgb(221, 221, 221);
+}

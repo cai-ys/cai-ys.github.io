@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+
+.clearfloat {
+    zoom: 1;
+}
+
+.yq_box {
+    padding: 0 40px;
+}
+
+.yq_box .yq_li {
+    float: left;
+    width: 23%;
+    text-align: center;
+    margin: 50px 0 30px;
+    padding: 10px;
+    height: 250px;
+}
+
+.boder {
+    width: 100%;
+    height: 250px;
+}
+
+.yq_box .yq_li .yq_cont {
+    padding: 20px;
+    background: #e9e9e9;
+}

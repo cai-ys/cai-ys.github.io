@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+}
+
+.t_t {
+    font-size: 50px;
+    color: #e5e5e5;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.t_t:hover {
+    color: #e80083 !important;
+}
+
+.t_c {
+    font-size: 22px;
+    color: #333;
+    text-align: center;
+}

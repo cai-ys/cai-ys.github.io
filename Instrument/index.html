@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="zj.css" />
+    <title>医疗器械</title>
+</head>
+
+<body>
+    <div id="box">
+        <div class="header_box">
+            <div class="header">
+                <div class="header_cont">
+                    <div class="header_logo">
+                        <img src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNy8wMi80NWEyYzAxMDEyZjkzOTA0ZGFlY2ZjMGFkOWJkOGE5Ni5wbmc_p_p100_p_3D.png" alt="" />
+                    </div>
+                    <div class="header_nav">
+                        <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#fcfcfc" text-color="rgb(49,145,204)" active-text-color="#ffd04b" style="border: none !important;padding: 10px 10px 10px 0 !important;">
+                            <el-menu-item index="1">
+                                <a href="#/" class="at">首页</a>
+                            </el-menu-item>
+                            <el-submenu index="2">
+                                <template slot="title">
+                    <a href="#/no2" class="at">关于我们</a>
+                  </template>
+                                <el-menu-item index="2-1">
+                                    <a href="" class="at">公司概况</a>
+                                </el-menu-item>
+                                <el-menu-item index="2-2">
+                                    <a href="" class="at">公司荣誉</a>
+                                </el-menu-item>
+                            </el-submenu>
+                            <el-menu-item index="3">
+                                <a href="#/no3" class="at">产品展示</a>
+                            </el-menu-item>
+                            <el-submenu index="4">
+                                <template slot="title">
+                    <a href="#/no4" class="at">新闻动态</a>
+                  </template>
+                                <el-menu-item index="4-1">
+                                    <a href="" class="at">公司新闻</a>
+                                </el-menu-item>
+                                <el-menu-item index="4-2">
+                                    <a href="" class="at">行业动态</a>
+                                </el-menu-item>
+                            </el-submenu>
+                            <el-submenu index="5">
+                                <template slot="title">
+                    <a href="#/no5" class="at">联系我们</a>
+                  </template>
+                                <el-menu-item index="5-1">
+                                    <a href="" class="at">联系我们</a>
+                                </el-menu-item>
+                                <el-menu-item index="5-2">
+                                    <a href="" class="at">加入我们</a>
+                                </el-menu-item>
+                            </el-submenu>
+                        </el-menu>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content" style="height: auto;">
+            <router-view></router-view>
+        </div>
+        <div class="footer_box">
+            <div class="footer">
+                <div class="footer_cont clearfloat">
+                    <div class="footer_logo">
+                        <img src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNy8wMi80NWEyYzAxMDEyZjkzOTA0ZGFlY2ZjMGFkOWJkOGE5Ni5wbmc_p_p100_p_3D.png" alt="" />
+                    </div>
+                    <div class="footer_nav">
+                        <p>
+                            版权所有 ©2014 地址：上海市松江区佘山林荫大道18号 京ICP备********号
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <template id="no1">
+      <div>
+        <div class="cont_lb">
+          <ve :box_arr="arr" style="height: 599px;"></ve>
+        </div>
+        <div
+          class="cont_yq"
+          style="width: 1024px;height: 182px;margin: 0 auto;border-bottom: 1px solid #ccc;"
+        >
+          <navs :aa="nav" style="width: 1024px;margin: 30px auto;"></navs>
+        </div>
+        <div class="cont_cp clearfloat">
+          <cp style="float: left;"></cp>
+          <cp style="float: right;"></cp>
+        </div>
+      </div>
+    </template>
+    <template id="no2">
+      <div>
+        <div class="no2_title">
+          <img
+            src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS9kYjQ5NTE0ODdlN2RhNmM0YWNiNjc5ODI2NDQ5YjlkZC5qcGc_p_p100_p_3D.jpg"
+            alt=""
+          />
+        </div>
+        <div class="no2_cont clearfloat">
+          <div class="no2_le">
+            <div class="le_title">
+              <h4>关于我们</h4>
+              <div>ABOUT US</div>
+              <span></span>
+            </div>
+            <div class="no2_ph"><i>></i><a href="#/no2">公司概况</a></div>
+            <div class="no2_ph"><i>></i><a href="#/no2/b2">公司荣誉</a></div>
+          </div>
+          <div class="no2_ri">
+            <div>
+              公司顺应医药流通发展趋势，投资2.3亿元建设省内具有领先水平的现代医药物流中心，精心打造信息化管理、专业化服务、规模化运作的现代医药流通企业，立足波，辐射，承担起浙江省的药品配送，成为物流平台，保障人民群众的用药需求。作为久负盛名的医药商业企业，股份将站在一个全新的历史起点、跨越新高度，以创新求发展，为打造“百年”企业，开创新的历史篇章。
+            </div>
+            <div style="height: 15px;"></div>
+            <div>
+              公司顺应医药流通发展趋势，投资2.3亿元建设省内具有领先水平的现代医药物流中心，精心打造信息化管理、专业化服务、规模化运作的现代医药流通企业，立足波，辐射，承担起浙江省的药品配送，成为物流平台，保障人民群众的用药需求。作为久负盛名的医药商业企业，股份将站在一个全新的历史起点、跨越新高度，以创新求发展，为打造“百年”企业，开创新的历史篇
+            </div>
+            <div style="height: 15px;"></div>
+            <div>
+              公司顺应医药流通发展趋势，投资2.3亿元建设省内具有领先水平的现代医药物流中心，精心打造信息化管理、专业化服务、规模化运作的现代医药流通企业，立足波，辐射，承担起浙江省的药品配送，成为物流平台，保障人民群众的用药需求。作为久负盛名的医药商业企业，股份将站在一个全新的历史起点、跨越新高度，以创新求发展，为打造“百年”企业，开创新的历史篇
+            </div>
+            <div
+              style="width: 100%;height: 345px;margin-top: 25px;text-align: center;"
+            >
+              <img
+                src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNC8wNi9wMTYuanBnP2F0dGFjaG1lbnRfaWQ9NTkxNw_p_p100_p_3D_p_p100_p_3D.jpg"
+                alt=""
+                style="width: 100%;height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="no3">
+      <div>
+        <div class="no3_title">
+          <img
+            src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS9kYjQ5NTE0ODdlN2RhNmM0YWNiNjc5ODI2NDQ5YjlkZC5qcGc_p_p100_p_3D.jpg"
+            alt=""
+          />
+        </div>
+        <div class="no3_cont clearfloat">
+          <div class="no3_le">
+            <div class="le_title">
+              <h4>产品展示</h4>
+              <div>PRODUCTS</div>
+              <span></span>
+            </div>
+            <div class="no3_ph"><i>></i><a href="#">医院常用医疗器械</a></div>
+            <div class="no3_ph"><i>></i><a href="#">家庭保健器材</a></div>
+            <div class="no3_ph"><i>></i><a href="#">家庭护理设备</a></div>
+          </div>
+          <div class="no3_ri">
+            <ul class="no3_item">
+              <li v-for="i in ocp">
+                <div class="no3_img">
+                  <img :src="i.url" alt="" />
+                </div>
+                <span>{{i.title}}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="no4">
+      <div>
+        <div class="no4_title">
+          <img
+            src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS9kYjQ5NTE0ODdlN2RhNmM0YWNiNjc5ODI2NDQ5YjlkZC5qcGc_p_p100_p_3D.jpg"
+            alt=""
+          />
+        </div>
+        <div class="no4_cont clearfloat">
+          <div class="no4_le">
+            <div class="le_title">
+              <h4>新闻动态</h4>
+              <div>NEWS</div>
+              <span></span>
+            </div>
+            <div class="no4_ph"><i>></i><a href="#">公司新闻</a></div>
+            <div class="no4_ph"><i>></i><a href="#">行业动态</a></div>
+          </div>
+          <div class="no4_ri">
+            <news :aa="list" style="width: 100%;"></news>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="no5">
+      <div>
+        <div class="no5_title">
+          <img
+            src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS9kYjQ5NTE0ODdlN2RhNmM0YWNiNjc5ODI2NDQ5YjlkZC5qcGc_p_p100_p_3D.jpg"
+            alt=""
+          />
+        </div>
+        <div class="no5_cont clearfloat">
+          <div class="no5_le">
+            <div class="le_title">
+              <h4>联系我们</h4>
+              <div>CONTACT US</div>
+              <span></span>
+            </div>
+            <div class="no5_ph"><i>></i><a href="#">联系我们</a></div>
+            <div class="no5_ph"><i>></i><a href="#">加入我们</a></div>
+          </div>
+          <div class="no5_ri">
+            <div class="lx">
+              <div class="dz">
+                <h3>医疗器械有限公司</h3>
+                <span>地址：临江市工业园区中心大道西</span>
+                <span>电话：4001-220-125</span>
+                <span>邮箱：youjia@youjia.com</span>
+              </div>
+              <div class="map">
+                <div
+                  style="height:378px;width:100%;margin-bottom:100px;z-index:'10';"
+                  id="dituContent"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="b1">
+      <div>公司概况</div>
+    </template>
+    <template id="b2">
+      <div>公司荣誉</div>
+    </template>
+    <template id="ve">
+      <div style="position:relative">
+        <transition :name="tran" v-for="(i,$index) in arr">
+          <div style="width: 100%;position: absolute;" v-show="$index==index">
+            <img :src="i" width="100%" ref="img" />
+          </div>
+        </transition>
+        <div class="l" @click="l">
+          <
+        </div>
+        <div class="r" @click="r">
+          >
+        </div>
+      </div>
+    </template>
+    <template id="navs">
+      <div>
+        <ul class="oul clearfloat">
+          <li v-for="i in navs">
+            <div class="oimg"><img :src="i.url" alt="" /></div>
+            <div class="ocont">
+              <span>{{i.con}}</span>
+              <a href="">{{i.phcont}}</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </template>
+    <template id="cp">
+      <div>
+        <ul class="ocp">
+          <li>
+            <div class="ocp_img">
+              <img
+                src="https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS80YmY2MDIwMGY1ZmZhOWUwM2JiYzFiZWFiMjgxY2FhZi5qcGc_p_p100_p_2FYXR0YWNobWVudF9pZD02NTE3.jpg"
+                alt=""
+              />
+            </div>
+            <div class="ocp_cont">
+              <p>产品名称#1</p>
+              <div class="ocp_it">
+                <span
+                  >其主要门类包括：化学原料药及制剂、中药材、中药饮片、中成药、抗生素、生物制品、生化药品、放射性药品、医疗器械、卫生材料、制药机械、药用包装材料及医药商业。</span
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </template>
+    <template id="news">
+      <div>
+        <div class="new_cont clearfloat" v-for="i in arr">
+          <div class="new_cont_le">
+            <img :src="i.url" alt="" />
+          </div>
+          <div class="new_cont_ri">
+            <div class="aaa"><a href="">{{i.time}}</a></div>
+            <div class="bbb"><span>{{i.cont}}</span></div>
+            <div>
+              <p>{{i.item}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+</body>
+<script src="vue.js"></script>
+<script src="vue-router.js"></script>
+<script src="compinent.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    var routes = [{
+        path: "/",
+        component: {
+            template: "#no1",
+            data() {
+                return {
+                    arr: [
+                        "https://54d4a3b210cae.t73.qifeiye.com/qfy-content/uploads/2014/06/8f252a9db700ba559288dc9bbb4d655b.jpg",
+                        "https://54d4a3b210cae.t73.qifeiye.com/qfy-content/uploads/2014/06/c8d6f54e0799fe165eb5d21936cdcf66.jpg"
+                    ],
+                    nav: [{
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8wMi9mYWQ1NjhhYWU0NDQ4MmUxNDYyM2M2MmJjYjJlYmQyMi5wbmc_p_p100_p_3D.png",
+                        con: "关于我们 /",
+                        phcont: "ABOUT",
+                        path: ""
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8wMi9mYjk0NmIzY2E2ZWM2YzYyNWMyMTc5MDE4ZGIzYTAzMS5wbmc_p_p100_p_3D.png",
+                        con: "新闻动态 /",
+                        phcont: "NEWS",
+                        path: ""
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMC80ODM4MWM1OTMyNDJiZWE3MTQxYjhhMDhkZTI4ZWY3Zi5qcGc_p_p100_p_3D.jpg",
+                        con: "联系我们 /",
+                        phcont: "CONTACT",
+                        path: ""
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8wMi9lZDgwNWI0MjUxYzlkNzcxNTdlZjg4NzI4NzhmYWI3Mi5wbmc_p_p100_p_3D.png",
+                        con: "产品展示 /",
+                        phcont: "PRODUCTS",
+                        path: ""
+                    }]
+                };
+            }
+        }
+    }, {
+        path: "/no2",
+        component: {
+            template: "#no2",
+            children: [{
+                path: "/",
+                component: {
+                    template: "#b1"
+                }
+            }, {
+                path: "b2",
+                component: {
+                    template: "#b2"
+                }
+            }]
+        }
+    }, {
+        path: "/no3",
+        component: {
+            template: "#no3",
+            data() {
+                return {
+                    ocp: [{
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS80YmY2MDIwMGY1ZmZhOWUwM2JiYzFiZWFiMjgxY2FhZi00MDB4MzAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg",
+                        title: "产品展示1"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS9lN2I3MDczNWQ1NWU1ZGYxNGUxODI5ODEwMzMwYjYxNS00MDB4MzAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg",
+                        title: "产品展示2"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS8zOTdlYzc2OTljMWExZDBmNjE4NzNjNmUxMDgwZTU5Ny00MDB4MzAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg",
+                        title: "产品展示3"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS9jYjE1Zjk2YmRiNjZkMjU0NTlkZWMwNGQyNTJhNTBlYy00MDB4MzAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg",
+                        title: "产品展示4"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8xMS8xN2M0ZTNkYWMxMWM4M2ZjZmM3YTBiZmEzNjNjZWFkNy00MDB4MzAwLmpwZw_p_p100_p_3D_p_p100_p_3D.jpg",
+                        title: "产品展示5"
+                    }]
+                };
+            }
+        }
+    }, {
+        path: "/no4",
+        component: {
+            template: "#no4",
+            data() {
+                return {
+                    list: [{
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNS8wMS8wMDA4ODY4XzM1MC0xNDB4MTEwLmpwZWc_p_p100_p_3D.png",
+                        time: "发布日期：2017年03月15 行业动态 ",
+                        cont: "“50+”医疗棋局",
+                        item: "“医疗服务价格是很重要的价格杠杆。”市卫计委副主任、新闻发言人钟东波表示，北京的医疗服务价格自1999年之后，一直没有调整，积累了较大的矛盾和问题。"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNS8wMS8wMDA4ODcwXzM1MC0xNDB4MTEwLmpwZWc_p_p100_p_3D.png",
+                        time: "发布日期：2017年03月15 公司新闻 ",
+                        cont: "38种消费型保险之医疗保险篇",
+                        item: "“医疗服务价格是很重要的价格杠杆。”市卫计委副主任、新闻发言人钟东波表示，北京的医疗服务价格自1999年之后，一直没有调整，积累了较大的矛盾和问题。"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNS8wMS8wMDA4ODcyXzM1MC0xNDB4MTEwLmpwZWc_p_p100_p_3D.png",
+                        time: "发布日期：2017年03月15 行业动态 ",
+                        cont: "	医疗器械经营企业需承担不良事件的监测工作",
+                        item: "“医疗服务价格是很重要的价格杠杆。”市卫计委副主任、新闻发言人钟东波表示，北京的医疗服务价格自1999年之后，一直没有调整，积累了较大的矛盾和问题。"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNS8wMS8wMDA4ODY4XzM1MC0xNDB4MTEwLmpwZWc_p_p100_p_3D.png",
+                        time: "发布日期：2017年03月15 公司新闻 ",
+                        cont: "	医疗器械经营企业需监测报告不良事件",
+                        item: "“医疗服务价格是很重要的价格杠杆。”市卫计委副主任、新闻发言人钟东波表示，北京的医疗服务价格自1999年之后，一直没有调整，积累了较大的矛盾和问题。"
+                    }, {
+                        url: "https://ccdn.goodq.top/caches/c0b2c37cae1f3b474c3b0522b670a440/aHR0cDovLzU0ZDRhM2IyMTBjYWUudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNS8wMS8wMDA4ODY2XzM1MC0xNDB4MTEwLmpwZWc_p_p100_p_3D.png",
+                        time: "发布日期：2017年03月15 行业动态 ",
+                        cont: "	医疗器械GSP落地 18万家企业大洗牌",
+                        item: "“医疗服务价格是很重要的价格杠杆。”市卫计委副主任、新闻发言人钟东波表示，北京的医疗服务价格自1999年之后，一直没有调整，积累了较大的矛盾和问题。"
+                    }]
+                };
+            }
+        }
+    }, {
+        path: "/no5",
+        component: {
+            template: "#no5",
+            mounted() {
+                function initMap() {
+                    createMap(); //创建地图
+                    setMapEvent(); //设置地图事件
+                    addMapControl(); //向地图添加控件
+                }
+
+                //创建地图函数：
+                function createMap() {
+                    var map = new BMap.Map("dituContent"); //在百度地图容器中创建一个地图
+                    var point = new BMap.Point(121.48054, 31.230989); //定义一个中心点坐标
+                    map.centerAndZoom(point, 12); //设定地图的中心点和坐标并将地图显示在地图容器中
+                    window.map = map; //将map变量存储在全局
+                }
+
+                //地图事件设置函数：
+                function setMapEvent() {
+                    // map.enableDragging(); //启用地图拖拽事件，默认启用(可不写)
+                    map.enableScrollWheelZoom(); //启用地图滚轮放大缩小
+                    map.enableDoubleClickZoom(); //启用鼠标双击放大，默认启用(可不写)
+                    map.enableKeyboard(); //启用键盘上下左右键移动地图
+                }
+
+                //地图控件添加函数：
+                function addMapControl() {
+                    //向地图中添加缩放控件
+                    var ctrl_nav = new BMap.NavigationControl({
+                        anchor: BMAP_ANCHOR_TOP_LEFT,
+                        type: BMAP_NAVIGATION_CONTROL_LARGE
+                    });
+                    map.addControl(ctrl_nav);
+                    //向地图中添加缩略图控件
+                    var ctrl_ove = new BMap.OverviewMapControl({
+                        anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+                        isOpen: 1
+                    });
+                    map.addControl(ctrl_ove);
+                    //向地图中添加比例尺控件
+                    var ctrl_sca = new BMap.ScaleControl({
+                        anchor: BMAP_ANCHOR_BOTTOM_LEFT
+                    });
+                    map.addControl(ctrl_sca);
+                }
+
+                initMap(); //创建和初始化地图
+            }
+        }
+    }];
+    var router = new VueRouter({
+        routes
+    });
+    new Vue({
+        el: "#box",
+        router,
+        data: {
+            activeIndex: "1",
+            activeIndex2: "1"
+        },
+        methods: {
+            handleSelect(key) {
+                console.log(key);
+            }
+        }
+    });
+</script>
+
+</html>
